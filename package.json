@@ -7,14 +7,26 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"prepare": "husky"
+		"prepare": "husky",
+		"supabase:start": "npx supabase start",
+		"supabase:db:reset": "npx supabase db reset",
+		"supabase:db:reset:remote": "npx supabase db reset --linked",
+		"supabase:gen-types": "npx supabase gen types typescript --local --schema public > types/supabase.type.ts",
+		"supabase:migrate": "yarn supabase:db:reset && yarn supabase:db:reset:remote && yarn supabase:gen-types",
+		"supabase:status": "npx supabase status"
 	},
 	"dependencies": {
+		"@supabase/ssr": "^0.5.1",
+		"@supabase/supabase-js": "^2.46.1",
 		"clsx": "^2.1.1",
+		"formik": "^2.4.6",
 		"lint-staged": "^15.2.10",
 		"next": "15.0.3",
 		"react": "19.0.0-rc-66855b96-20241106",
-		"react-dom": "19.0.0-rc-66855b96-20241106"
+		"react-datepicker": "^7.5.0",
+		"react-dom": "19.0.0-rc-66855b96-20241106",
+		"swiper": "^11.1.14",
+		"yup": "^1.4.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20",
