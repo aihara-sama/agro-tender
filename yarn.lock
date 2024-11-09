@@ -2463,6 +2463,11 @@ path-scurry@^1.11.1:
     lru-cache "^10.2.0"
     minipass "^5.0.0 || ^6.0.2 || ^7.0.0"
 
+phone@^3.1.53:
+  version "3.1.53"
+  resolved "https://registry.yarnpkg.com/phone/-/phone-3.1.53.tgz#a4150e84ad36ba03d3bcd8b1973ef2d73cc1286e"
+  integrity sha512-+0sMjlxjcm1rjUDRLzXW06vRg/SePwa+MubuSt9WhHoUziGrGHjuC/tfFYfh2oXKU/dcckwCyMUMDAOaVArb6w==
+
 picocolors@^1.0.0, picocolors@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
