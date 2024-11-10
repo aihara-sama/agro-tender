@@ -11,6 +11,7 @@ export type Database = {
     Tables: {
       activities: {
         Row: {
+          created_at: string
           ends_date: string
           id: string
           image: string
@@ -21,6 +22,7 @@ export type Database = {
           type: string
         }
         Insert: {
+          created_at?: string
           ends_date: string
           id?: string
           image: string
@@ -31,6 +33,7 @@ export type Database = {
           type: string
         }
         Update: {
+          created_at?: string
           ends_date?: string
           id?: string
           image?: string
@@ -153,7 +156,7 @@ export type Database = {
           registration_date: string
           rrc: string
           status: Database["public"]["Enums"]["org_status"] | null
-          termindated_date: string | null
+          terminated_date: string | null
           tin: string
           title: string
         }
@@ -164,7 +167,7 @@ export type Database = {
           registration_date: string
           rrc: string
           status?: Database["public"]["Enums"]["org_status"] | null
-          termindated_date?: string | null
+          terminated_date?: string | null
           tin: string
           title: string
         }
@@ -175,8 +178,26 @@ export type Database = {
           registration_date?: string
           rrc?: string
           status?: Database["public"]["Enums"]["org_status"] | null
-          termindated_date?: string | null
+          terminated_date?: string | null
           tin?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      reels: {
+        Row: {
+          id: string
+          image: string
+          title: string
+        }
+        Insert: {
+          id?: string
+          image: string
+          title: string
+        }
+        Update: {
+          id?: string
+          image?: string
           title?: string
         }
         Relationships: []

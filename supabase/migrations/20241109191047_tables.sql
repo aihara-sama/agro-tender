@@ -34,23 +34,24 @@ CREATE TABLE public.orgs (
   id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
   status public.Org_Status,
   title TEXT NOT NULL,
-  TIN TEXT NOT NULL, -- ИНН
+  tin TEXT NOT NULL, -- ИНН
   registration_date TIMESTAMP NOT NULL,
   psrn TEXT NOT NULL, -- ОГРН
   rrc TEXT NOT NULL,
   arcea TEXT NOT NULL, -- ОКВЭД
-  termindated_date TIMESTAMP
+  terminated_date TIMESTAMP
 );
 
 CREATE TABLE public.activities (
   id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
-  type TEXT NOT NULL,
   title TEXT NOT NULL,
+  type TEXT NOT NULL,
   location TEXT NOT NULL,
+  image TEXT NOT NULL,
+  is_important BOOLEAN NOT NULL,
   starts_date TIMESTAMP NOT NULL,
   ends_date TIMESTAMP NOT NULL,
-  image TEXT NOT NULL,
-  is_important BOOLEAN NOT NULL
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE public.news (
@@ -58,6 +59,12 @@ CREATE TABLE public.news (
   type TEXT NOT NULL,
   title TEXT NOT NULL,
   text TEXT not NULL,
+  image TEXT NOT NULL
+
+);
+CREATE TABLE public.reels (
+  id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
+  title TEXT NOT NULL,
   image TEXT NOT NULL
 );
 
