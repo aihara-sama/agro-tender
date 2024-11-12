@@ -4,6 +4,7 @@ CREATE TABLE public.users (
   last_name TEXT NOT NULL,
   middle_name TEXT NOT NULL,
   avatar TEXT NOT NULL,
+  background TEXT NOT NULL,
   phone TEXT NOT NULL,
   country TEXT NOT NULL,
   city TEXT NOT NULL,
