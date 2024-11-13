@@ -19,3 +19,23 @@ body {
 	background: var(--background);
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+	/* Scrollbar ↴ */
+	*::-webkit-scrollbar {
+		@apply size-1 bg-white;
+	}
+	*::-webkit-scrollbar-track {
+		@apply bg-white;
+	}
+	*::-webkit-scrollbar-thumb {
+		@apply bg-black/20 outline outline-1 outline-transparent rounded-[4px];
+	}
+	/* ^ Scrollbar ^ */
+}
+
+@layer utilities {
+	.wrapper {
+		@apply max-w-screen-2xl mx-auto px-3;
+	}
+}
