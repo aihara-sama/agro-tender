@@ -244,6 +244,7 @@ export type Database = {
         Row: {
           academy: string | null
           avatar: string
+          background: string
           city: string
           country: string
           created_at: string
@@ -264,6 +265,7 @@ export type Database = {
         Insert: {
           academy?: string | null
           avatar: string
+          background: string
           city: string
           country: string
           created_at?: string
@@ -284,6 +286,7 @@ export type Database = {
         Update: {
           academy?: string | null
           avatar?: string
+          background?: string
           city?: string
           country?: string
           created_at?: string

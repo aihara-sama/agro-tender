@@ -31,6 +31,26 @@ CREATE TABLE public.jobs (
   achievments TEXT
 );
 
+CREATE TABLE public.resumes (
+  id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES public.users ON DELETE CASCADE NOT NULL,
+  name TEXT NOT NULL,
+  ext TEXT NOT NULL,
+  path TEXT NOT NULL,
+  size int NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE public.certificates (
+  id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES public.users ON DELETE CASCADE NOT NULL,
+  name TEXT NOT NULL,
+  ext TEXT NOT NULL,
+  path TEXT NOT NULL,
+  size int NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
 CREATE TABLE public.orgs (
   id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
   status public.Org_Status,
@@ -61,30 +81,11 @@ CREATE TABLE public.news (
   title TEXT NOT NULL,
   text TEXT not NULL,
   image TEXT NOT NULL
-
 );
+
 CREATE TABLE public.reels (
   id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,
   image TEXT NOT NULL
 );
 
-CREATE TABLE public.resumes (
-  id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID REFERENCES public.users ON DELETE CASCADE NOT NULL,
-  name TEXT NOT NULL,
-  ext TEXT NOT NULL,
-  path TEXT NOT NULL,
-  size int NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT NOW()
-);
-
-CREATE TABLE public.certificates (
-  id UUID NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID REFERENCES public.users ON DELETE CASCADE NOT NULL,
-  name TEXT NOT NULL,
-  ext TEXT NOT NULL,
-  path TEXT NOT NULL,
-  size int NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT NOW()
-);
